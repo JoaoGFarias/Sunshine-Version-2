@@ -1,13 +1,18 @@
 package com.example.android.sunshine.app;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -57,6 +62,37 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            List<String> forecasts = new ArrayList<String>();
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Today - Sunny - 88/63");
+            forecasts.add("Tomorrow - Sunny - 88/63");
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
+                                                                    R.layout.list_item_forecast,
+                                                                    R.id.list_item_forecast_textview,
+                                                                    forecasts);
+            ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast_);
+            listView.setAdapter(adapter);
+
             return rootView;
         }
     }
